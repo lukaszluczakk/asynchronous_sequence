@@ -14,6 +14,8 @@
 		F416084E2763F1BB008E4327 /* AsynchronousSequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416084D2763F1BB008E4327 /* AsynchronousSequenceTests.swift */; };
 		F41608582763F1BB008E4327 /* AsynchronousSequenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41608572763F1BB008E4327 /* AsynchronousSequenceUITests.swift */; };
 		F416085A2763F1BB008E4327 /* AsynchronousSequenceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41608592763F1BB008E4327 /* AsynchronousSequenceUITestsLaunchTests.swift */; };
+		F41608672763F23E008E4327 /* ApplicationBuildStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41608662763F23E008E4327 /* ApplicationBuildStream.swift */; };
+		F416086B2763F783008E4327 /* AsynchronousSequenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416086A2763F783008E4327 /* AsynchronousSequenceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		F41608532763F1BB008E4327 /* AsynchronousSequenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsynchronousSequenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41608572763F1BB008E4327 /* AsynchronousSequenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousSequenceUITests.swift; sourceTree = "<group>"; };
 		F41608592763F1BB008E4327 /* AsynchronousSequenceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousSequenceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F41608662763F23E008E4327 /* ApplicationBuildStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationBuildStream.swift; sourceTree = "<group>"; };
+		F416086A2763F783008E4327 /* AsynchronousSequenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousSequenceViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 		F416083B2763F1BB008E4327 /* AsynchronousSequence */ = {
 			isa = PBXGroup;
 			children = (
+				F41608692763F76F008E4327 /* Model */,
+				F41608682763F4F9008E4327 /* Stream */,
 				F416083C2763F1BB008E4327 /* AsynchronousSequenceApp.swift */,
 				F416083E2763F1BB008E4327 /* ContentView.swift */,
 				F41608402763F1BB008E4327 /* Assets.xcassets */,
@@ -125,6 +131,22 @@
 				F41608592763F1BB008E4327 /* AsynchronousSequenceUITestsLaunchTests.swift */,
 			);
 			path = AsynchronousSequenceUITests;
+			sourceTree = "<group>";
+		};
+		F41608682763F4F9008E4327 /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				F41608662763F23E008E4327 /* ApplicationBuildStream.swift */,
+			);
+			path = Stream;
+			sourceTree = "<group>";
+		};
+		F41608692763F76F008E4327 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F416086A2763F783008E4327 /* AsynchronousSequenceViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F416083F2763F1BB008E4327 /* ContentView.swift in Sources */,
+				F41608672763F23E008E4327 /* ApplicationBuildStream.swift in Sources */,
 				F416083D2763F1BB008E4327 /* AsynchronousSequenceApp.swift in Sources */,
+				F416086B2763F783008E4327 /* AsynchronousSequenceViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

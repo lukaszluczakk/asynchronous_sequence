@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct AsynchronousSequenceApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = AsynchronousSequenceViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Button {
+                Task {
+                    await viewModel.buildApp()
+                }
+            } label: {
+                Text("Build app")
+            }
+            List(viewModel.informations) { info in
+                VStack {
+                    Text(info.text)
+                }
+            }
+        }
     }
 }
 
