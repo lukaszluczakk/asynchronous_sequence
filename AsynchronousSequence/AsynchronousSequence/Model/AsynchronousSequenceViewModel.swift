@@ -10,14 +10,14 @@ import Foundation
 class AsynchronousSequenceViewModel: ObservableObject {
     @Published var informations: [BuildInformation] = []
     
-    func buildApp() async {
+    func buildApp() async throws {
         let builder = ApplicationBuilder()
-        for await info in builder.build() {
+        for try await info in builder.build() {
             await update(info: info)
         }
     }
     
-    @MainActor func update(info: BuildInformation) {
+     @MainActor func update(info: BuildInformation) {
         informations.append(info)
     }
 }

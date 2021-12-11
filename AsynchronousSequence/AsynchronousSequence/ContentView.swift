@@ -10,11 +10,25 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel = AsynchronousSequenceViewModel()
     
+    @State var lastMessage = "" {
+        didSet {
+            isDisplayingMessage = true
+        }
+    }
+    @State var isDisplayingMessage = false
+    
     var body: some View {
         VStack {
             Button {
                 Task {
-                    await viewModel.buildApp()
+                    do {
+                        try await viewModel.buildApp()
+                        lastMessage = "Build was finished successfully."
+                    } catch {
+                        print(error)
+                        lastMessage = error.localizedDescription
+                    }
+                    
                 }
             } label: {
                 Text("Build app")
@@ -24,7 +38,11 @@ struct ContentView: View {
                     Text(info.text)
                 }
             }
-        }
+        }.alert("Message", isPresented: $isDisplayingMessage, actions: {
+            Button("Close", role: .cancel) { }
+        }, message: {
+            Text(lastMessage)
+        })
     }
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BuildInformationType {
+enum BuildInformationType: CaseIterable {
     case info, warning, error
 }
 
@@ -19,15 +19,44 @@ struct BuildInformation: Identifiable {
 }
 
 class ApplicationBuilder {
-    func build() -> AsyncStream<BuildInformation> {
-        AsyncStream { continuation in
+    func build() -> AsyncThrowingStream<BuildInformation, Error> {
+        AsyncThrowingStream { continuation in
             Task {
-                continuation.yield(BuildInformation(date: Date(), text: "App.dll builed", type: .info))
-                Thread.sleep(forTimeInterval: 5)
-                continuation.yield(BuildInformation(date: Date(), text: "App.dll builed", type: .info))
+                for i in 1...20 {
+                    let stopTime = Double.random(in: 0..<1)
+                    Thread.sleep(forTimeInterval: stopTime)
+                    
+                    let type = BuildInformationType.allCases.randomElement()!
+                    let text = getText(type: type, i: i)
+                    continuation.yield(BuildInformation(date: Date(), text: text, type: type))
+                }
+                
                 continuation.finish()
             }
+        }
+    }
+    
+    private func getText(type: BuildInformationType, i: Int) -> String {
+        switch (type) {
+        case .info:
+            return "AsynchronousSequence\(i).dll builded."
+        case .warning:
+            return "AsynchronousSequence\(i).dll has unused variables."
+        case .error:
+            return "AsynchronousSequence\(i).dll failed. CreateSequence method does not exist."
+        }
+    }
+}
 
+enum ApplicationBuilderError : String {
+    case unknown = "Unknown error"
+}
+
+extension ApplicationBuilderError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .unknown:
+            return "Unknown error occured"
         }
     }
 }
