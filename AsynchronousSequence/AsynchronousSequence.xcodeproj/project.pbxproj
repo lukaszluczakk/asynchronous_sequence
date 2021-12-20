@@ -19,6 +19,7 @@
 		F4D248822770FF2200A4D9A2 /* BuildInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D248812770FF2200A4D9A2 /* BuildInformationViewModel.swift */; };
 		F4D24885277102D000A4D9A2 /* BuildInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D24884277102D000A4D9A2 /* BuildInformationView.swift */; };
 		F4D248882771032800A4D9A2 /* PreviewProviderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D248872771032800A4D9A2 /* PreviewProviderExtensions.swift */; };
+		F4D2488B2771145F00A4D9A2 /* PreviewLayoutComponentModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2488A2771145F00A4D9A2 /* PreviewLayoutComponentModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		F4D248812770FF2200A4D9A2 /* BuildInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildInformationViewModel.swift; sourceTree = "<group>"; };
 		F4D24884277102D000A4D9A2 /* BuildInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildInformationView.swift; sourceTree = "<group>"; };
 		F4D248872771032800A4D9A2 /* PreviewProviderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProviderExtensions.swift; sourceTree = "<group>"; };
+		F4D2488A2771145F00A4D9A2 /* PreviewLayoutComponentModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewLayoutComponentModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		F4D24883277102C100A4D9A2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F4D248892771144A00A4D9A2 /* Modifiers */,
 				F416083E2763F1BB008E4327 /* ContentView.swift */,
 				F4D24884277102D000A4D9A2 /* BuildInformationView.swift */,
 			);
@@ -172,6 +175,14 @@
 				F4D248872771032800A4D9A2 /* PreviewProviderExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F4D248892771144A00A4D9A2 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F4D2488A2771145F00A4D9A2 /* PreviewLayoutComponentModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4D248882771032800A4D9A2 /* PreviewProviderExtensions.swift in Sources */,
+				F4D2488B2771145F00A4D9A2 /* PreviewLayoutComponentModifier.swift in Sources */,
 				F416083F2763F1BB008E4327 /* ContentView.swift in Sources */,
 				F41608672763F23E008E4327 /* AppService.swift in Sources */,
 				F4D24885277102D000A4D9A2 /* BuildInformationView.swift in Sources */,

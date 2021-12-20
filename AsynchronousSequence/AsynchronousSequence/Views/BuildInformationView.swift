@@ -37,8 +37,7 @@ struct BuildInformationView_Previews: PreviewProvider {
             BuildInformationView(dev.buildWithWarningStatus)
             BuildInformationView(dev.buildWithErrorStatus)
         }
-        .previewLayout(.sizeThatFits)
-        .padding()
+        .preview()
     }
 }
 

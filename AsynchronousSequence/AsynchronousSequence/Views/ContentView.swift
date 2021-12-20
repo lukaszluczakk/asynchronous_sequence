@@ -20,24 +20,12 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button {
-                Task {
-                    do {
-                        try await viewModel.buildApp()
-                        lastMessage = "Build was finished successfully."
-                    } catch {
-                        print(error)
-                        lastMessage = error.localizedDescription
-                    }
-                }
-            } label: {
-                Text("Build app")
-            }
+            buildAppButton
             List(viewModel.informations) { info in
                 BuildInformationView(info)
             }
         }.alert("Message", isPresented: $isDisplayingMessage, actions: {
-            Button("Close", role: .cancel) { }
+            closeMessageButton
         }, message: {
             Text(lastMessage)
         })
@@ -47,5 +35,27 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+extension ContentView {
+    private var buildAppButton: some View {
+        Button {
+            Task {
+                do {
+                    try await viewModel.buildApp()
+                    lastMessage = "Build was finished successfully."
+                } catch {
+                    print(error)
+                    lastMessage = error.localizedDescription
+                }
+            }
+        } label: {
+            Text("Build app")
+        }
+    }
+    
+    private var closeMessageButton: some View {
+        Button("Close", role: .cancel) { }
     }
 }
