@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = AsynchronousSequenceViewModel()
+    @ObservedObject var viewModel = AppViewModel(service: AppService())
     
     @State var lastMessage = "" {
         didSet {
             isDisplayingMessage = true
         }
     }
+    
     @State var isDisplayingMessage = false
     
     var body: some View {
@@ -28,15 +29,12 @@ struct ContentView: View {
                         print(error)
                         lastMessage = error.localizedDescription
                     }
-                    
                 }
             } label: {
                 Text("Build app")
             }
             List(viewModel.informations) { info in
-                VStack {
-                    Text(info.text)
-                }
+                BuildInformationView(info)
             }
         }.alert("Message", isPresented: $isDisplayingMessage, actions: {
             Button("Close", role: .cancel) { }

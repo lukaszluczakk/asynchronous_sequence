@@ -7,18 +7,11 @@
 
 import Foundation
 
-enum BuildInformationType: CaseIterable {
-    case info, warning, error
+protocol AppServiceProtocol {
+    func build() -> AsyncThrowingStream<BuildInformation, Error>
 }
 
-struct BuildInformation: Identifiable {
-    let id: UUID = UUID()
-    let date: Date
-    let text: String
-    let type: BuildInformationType
-}
-
-class ApplicationBuilder {
+class AppService: AppServiceProtocol {
     func build() -> AsyncThrowingStream<BuildInformation, Error> {
         AsyncThrowingStream { continuation in
             Task {
@@ -28,7 +21,13 @@ class ApplicationBuilder {
                     
                     let type = BuildInformationType.allCases.randomElement()!
                     let text = getText(type: type, i: i)
-                    continuation.yield(BuildInformation(date: Date(), text: text, type: type))
+                    let info = BuildInformation(date: Date(), text: text, type: type)
+                    
+                    continuation.yield(info)
+                    
+                    if type == .error {
+                        continuation.finish(throwing: AppError.errorWhileBuildApp)
+                    }
                 }
                 
                 continuation.finish()
@@ -48,15 +47,26 @@ class ApplicationBuilder {
     }
 }
 
-enum ApplicationBuilderError : String {
-    case unknown = "Unknown error"
-}
-
-extension ApplicationBuilderError: LocalizedError {
+extension AppError: LocalizedError {
     public var errorDescription: String? {
         switch self {
-        case .unknown:
-            return "Unknown error occured"
+        case .errorWhileBuildApp:
+            return "Please fix code"
         }
     }
+}
+
+enum AppError : String {
+    case errorWhileBuildApp = "Arror occured while build app"
+}
+
+enum BuildInformationType: CaseIterable {
+    case info, warning, error
+}
+
+struct BuildInformation: Identifiable {
+    let id: UUID = UUID()
+    let date: Date
+    let text: String
+    let type: BuildInformationType
 }
