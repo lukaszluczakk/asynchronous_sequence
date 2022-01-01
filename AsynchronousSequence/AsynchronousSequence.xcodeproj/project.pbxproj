@@ -11,7 +11,7 @@
 		F416083F2763F1BB008E4327 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416083E2763F1BB008E4327 /* ContentView.swift */; };
 		F41608412763F1BB008E4327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41608402763F1BB008E4327 /* Assets.xcassets */; };
 		F41608442763F1BB008E4327 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41608432763F1BB008E4327 /* Preview Assets.xcassets */; };
-		F416084E2763F1BB008E4327 /* AsynchronousSequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416084D2763F1BB008E4327 /* AsynchronousSequenceTests.swift */; };
+		F416084E2763F1BB008E4327 /* AppViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416084D2763F1BB008E4327 /* AppViewModelTests.swift */; };
 		F41608582763F1BB008E4327 /* AsynchronousSequenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41608572763F1BB008E4327 /* AsynchronousSequenceUITests.swift */; };
 		F416085A2763F1BB008E4327 /* AsynchronousSequenceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41608592763F1BB008E4327 /* AsynchronousSequenceUITestsLaunchTests.swift */; };
 		F41608672763F23E008E4327 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41608662763F23E008E4327 /* AppService.swift */; };
@@ -46,7 +46,7 @@
 		F41608402763F1BB008E4327 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F41608432763F1BB008E4327 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F41608492763F1BB008E4327 /* AsynchronousSequenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsynchronousSequenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F416084D2763F1BB008E4327 /* AsynchronousSequenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousSequenceTests.swift; sourceTree = "<group>"; };
+		F416084D2763F1BB008E4327 /* AppViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModelTests.swift; sourceTree = "<group>"; };
 		F41608532763F1BB008E4327 /* AsynchronousSequenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsynchronousSequenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41608572763F1BB008E4327 /* AsynchronousSequenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousSequenceUITests.swift; sourceTree = "<group>"; };
 		F41608592763F1BB008E4327 /* AsynchronousSequenceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousSequenceUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		F416084C2763F1BB008E4327 /* AsynchronousSequenceTests */ = {
 			isa = PBXGroup;
 			children = (
-				F416084D2763F1BB008E4327 /* AsynchronousSequenceTests.swift */,
+				F416084D2763F1BB008E4327 /* AppViewModelTests.swift */,
 			);
 			path = AsynchronousSequenceTests;
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F416084E2763F1BB008E4327 /* AsynchronousSequenceTests.swift in Sources */,
+				F416084E2763F1BB008E4327 /* AppViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

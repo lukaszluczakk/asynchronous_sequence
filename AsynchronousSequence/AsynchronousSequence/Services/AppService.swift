@@ -16,7 +16,7 @@ class AppService: AppServiceProtocol {
         AsyncThrowingStream { continuation in
             Task {
                 for i in 1...20 {
-                    let stopTime = Double.random(in: 0..<1)
+                    let stopTime = Double.random(in: 0..<3)
                     Thread.sleep(forTimeInterval: stopTime)
                     
                     let type = BuildInformationType.allCases.randomElement()!
