@@ -46,17 +46,49 @@
             filePath = "AsynchronousSequenceTests/AppViewModelTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "testBuildAppShouldStartHandleStream()"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "testBuildAppShouldHandleStream()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2DB0867A-0445-48D1-B34D-859B06FB3F3F - dd7fb1a818f23fcd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Array&lt;AsynchronousSequence.BuildInformationViewModel&gt;) -&gt; () in AsynchronousSequenceTests.AppViewModelTests.testBuildAppShouldStartHandleStream() async throws -&gt; ()"
+                  moduleName = "AsynchronousSequenceTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukaszluczak/Projects/Stable/asynchronous_sequence/AsynchronousSequence/AsynchronousSequenceTests/AppViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "2DB0867A-0445-48D1-B34D-859B06FB3F3F - dd7fb1a818f23f2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Array&lt;AsynchronousSequence.BuildInformationViewModel&gt;) -&gt; () in AsynchronousSequenceTests.AppViewModelTests.testBuildAppShouldStartHandleStream() async throws -&gt; ()"
+                  moduleName = "AsynchronousSequenceTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukaszluczak/Projects/Stable/asynchronous_sequence/AsynchronousSequence/AsynchronousSequenceTests/AppViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A6105E30-EF24-409F-A3E5-CA9B5BB3052A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AsynchronousSequence/ViewModels/AppViewModel.swift"
@@ -65,6 +97,86 @@
             startingLineNumber = "26"
             endingLineNumber = "26"
             landmarkName = "update(info:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83E2FCA0-B3FC-4406-A6C4-F06E32ED4165"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AsynchronousSequence/ViewModels/AppViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "update(info:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0591AB0-CA50-4A34-80DF-42DBD2E774F7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AsynchronousSequenceTests/AppViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "testBuildAppShouldHandleStream()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A0591AB0-CA50-4A34-80DF-42DBD2E774F7 - a76e4fab2b2686a9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for AsynchronousSequenceTests.AppViewModelTests.testBuildAppShouldStartHandleStream() async throws -&gt; ()"
+                  moduleName = "AsynchronousSequenceTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukaszluczak/Projects/Stable/asynchronous_sequence/AsynchronousSequence/AsynchronousSequenceTests/AppViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "A0591AB0-CA50-4A34-80DF-42DBD2E774F7 - a76e4fab2b2686a9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for AsynchronousSequenceTests.AppViewModelTests.testBuildAppShouldStartHandleStream() async throws -&gt; ()"
+                  moduleName = "AsynchronousSequenceTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukaszluczak/Projects/Stable/asynchronous_sequence/AsynchronousSequence/AsynchronousSequenceTests/AppViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "268">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ECB64A6D-6E6C-4D5A-A530-A5EB4F8F8B4B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AsynchronousSequenceTests/AppViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "testBuildAppShouldHandleStream()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
