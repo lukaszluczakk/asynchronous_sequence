@@ -22,6 +22,7 @@ struct BuildInformationView: View {
                 .accessibilityLabel(imageName)
             VStack(alignment: .leading) {
                 Text(info.text)
+                    .accessibilityIdentifier("BuildInformationView_Text")
                     .font(.caption)
                 Text(info.date)
                     .font(.caption2)

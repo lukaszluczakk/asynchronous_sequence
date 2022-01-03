@@ -23,12 +23,10 @@ struct ContentView: View {
             buildAppButton
             List(viewModel.informations) { info in
                 BuildInformationView(info)
+                    .accessibilityIdentifier("BuildInformationView")
             }
-        }.alert("Message", isPresented: $isDisplayingMessage, actions: {
-            closeMessageButton
-        }, message: {
-            Text(lastMessage)
-        })
+        }
+        
     }
 }
 
@@ -52,7 +50,7 @@ extension ContentView {
             }
         } label: {
             Text("Build app")
-        }
+        }.accessibilityIdentifier("BuildAppButton")
     }
     
     private var closeMessageButton: some View {

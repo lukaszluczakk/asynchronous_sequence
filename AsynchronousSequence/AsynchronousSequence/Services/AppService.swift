@@ -15,8 +15,8 @@ class AppService: AppServiceProtocol {
     func build() -> AsyncThrowingStream<BuildInformation, Error> {
         AsyncThrowingStream { continuation in
             Task {
-                for i in 1...20 {
-                    let stopTime = Double.random(in: 0..<3)
+                for i in 1...5 {
+                    let stopTime = Double.random(in: 0..<1)
                     Thread.sleep(forTimeInterval: stopTime)
                     
                     let type = BuildInformationType.allCases.randomElement()!
