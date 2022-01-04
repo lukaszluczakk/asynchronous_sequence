@@ -19,7 +19,6 @@ struct BuildInformationView: View {
         
         HStack {
             Image(systemName: imageName)
-                .accessibilityLabel(imageName)
             VStack(alignment: .leading) {
                 Text(info.text)
                     .accessibilityIdentifier("BuildInformationView_Text")

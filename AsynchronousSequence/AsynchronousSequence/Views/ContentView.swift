@@ -23,7 +23,6 @@ struct ContentView: View {
             buildAppButton
             List(viewModel.informations) { info in
                 BuildInformationView(info)
-                    .accessibilityIdentifier("BuildInformationView")
             }
         }
         
