@@ -96,8 +96,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "AppViewModel"
-            landmarkType = "3">
+            landmarkName = "update(info:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -112,7 +112,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
             endingLineNumber = "25"
-            landmarkName = "buildApp()"
+            landmarkName = "update(info:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -192,7 +192,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "test_buildAppButton_ShouldGenerateBuildViewInformation()"
+            landmarkName = "test_BuildAppButton_ShouldGenerateBuildViewInformation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,7 +8,7 @@
 import Foundation
 
 class AppViewModel: ObservableObject {
-    @Published var informations: [BuildInformationViewModel] = []
+    @Published var logs: [BuildLogViewModel] = []
     
     private let service: AppServiceProtocol
     
@@ -22,7 +22,7 @@ class AppViewModel: ObservableObject {
         }
     }
     
-     @MainActor func update(info: BuildInformation) {
-         informations.append(BuildInformationViewModel.createFrom(info: info))
+     @MainActor func update(info: BuildLog) {
+         logs.append(BuildLogViewModel.createFrom(info: info))
     }
 }

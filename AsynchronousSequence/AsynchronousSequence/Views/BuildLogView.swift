@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct BuildInformationView: View {
-    private let info: BuildInformationViewModel
+struct BuildLogView: View {
+    private let info: BuildLogViewModel
     
-    init(_ info: BuildInformationViewModel) {
+    init(_ info: BuildLogViewModel) {
         self.info = info
     }
     
@@ -21,7 +21,7 @@ struct BuildInformationView: View {
             Image(systemName: imageName)
             VStack(alignment: .leading) {
                 Text(info.text)
-                    .accessibilityIdentifier("BuildInformationView_Text")
+                    .accessibilityIdentifier("BuildLogView_Text")
                     .font(.caption)
                 Text(info.date)
                     .font(.caption2)
@@ -33,17 +33,17 @@ struct BuildInformationView: View {
 struct BuildInformationView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            BuildInformationView(dev.buildWithInfoStatus)
-            BuildInformationView(dev.buildWithWarningStatus)
-            BuildInformationView(dev.buildWithErrorStatus)
+            BuildLogView(dev.buildWithInfoStatus)
+            BuildLogView(dev.buildWithWarningStatus)
+            BuildLogView(dev.buildWithErrorStatus)
         }
         .preview()
     }
 }
 
 
-extension BuildInformationView {
-    private func typeToImage(type: BuildInformationType) -> String {
+extension BuildLogView {
+    private func typeToImage(type: BuildLogType) -> String {
         switch (type) {
         case .info:
             return "checkmark.diamond.fill"

@@ -9,7 +9,7 @@ import Foundation
 @testable import AsynchronousSequence
 
 final class AppServiceMock: AppServiceProtocol {
-    typealias ContinuationHandlerType = (AsyncThrowingStream<BuildInformation, Error>.Continuation) -> Void
+    typealias ContinuationHandlerType = (AsyncThrowingStream<BuildLog, Error>.Continuation) -> Void
     
     private var continuationHandler: ContinuationHandlerType
     
@@ -18,8 +18,8 @@ final class AppServiceMock: AppServiceProtocol {
     }
     
     @discardableResult
-    func build() -> AsyncThrowingStream<BuildInformation, Error> {
-        AsyncThrowingStream<BuildInformation, Error> { c in
+    func build() -> AsyncThrowingStream<BuildLog, Error> {
+        AsyncThrowingStream<BuildLog, Error> { c in
             continuationHandler(c)
         }
     }

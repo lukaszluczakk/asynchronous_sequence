@@ -8,29 +8,29 @@
 import Foundation
 
 protocol AppServiceProtocol {
-    func build() -> AsyncThrowingStream<BuildInformation, Error>
+    func build() -> AsyncThrowingStream<BuildLog, Error>
 }
 
 class AppService: AppServiceProtocol {
-    private typealias BuildInformationFunctionType = ((Int) -> BuildInformation)
-    private var buildInformationFunctions: [BuildInformationFunctionType] = []
+    private typealias BuildLogFunctionType = ((Int) -> BuildLog)
+    private var buildLogFunctions: [BuildLogFunctionType] = []
     
     init() {
-        buildInformationFunctions.append(buildInfo)
-        buildInformationFunctions.append(buildWarning)
-        buildInformationFunctions.append(buildError)
+        buildLogFunctions.append(buildInfo)
+        buildLogFunctions.append(buildWarning)
+        buildLogFunctions.append(buildError)
     }
 
-    func build() -> AsyncThrowingStream<BuildInformation, Error> {
+    func build() -> AsyncThrowingStream<BuildLog, Error> {
         AsyncThrowingStream { continuation in
             Task {
                 for i in 1...5 {
                     let stopTime = Double.random(in: 0..<1)
                     Thread.sleep(forTimeInterval: stopTime)
-                    let model = buildInformationFunctions.randomElement()!(i)
-                    continuation.yield(model)
+                    let log = buildLogFunctions.randomElement()!(i)
+                    continuation.yield(log)
                     
-                    if model.type == .error {
+                    if log.type == .error {
                         continuation.finish(throwing: AppError.errorWhileBuildApp)
                     }
                 }
@@ -40,16 +40,16 @@ class AppService: AppServiceProtocol {
         }
     }
 
-    private func buildInfo(i: Int) -> BuildInformation {
-        BuildInformation(date: .now, text: "AsynchronousSequence\(i).dll builded.", type: .info)
+    private func buildInfo(i: Int) -> BuildLog {
+        BuildLog(date: .now, text: "AsynchronousSequence\(i).dll builded.", type: .info)
     }
     
-    private func buildWarning(i: Int) -> BuildInformation {
-        BuildInformation(date: .now, text: "AsynchronousSequence\(i).dll has unused variables.", type: .warning)
+    private func buildWarning(i: Int) -> BuildLog {
+        BuildLog(date: .now, text: "AsynchronousSequence\(i).dll has unused variables.", type: .warning)
     }
     
-    private func buildError(i: Int) -> BuildInformation {
-        BuildInformation(date: .now, text: "AsynchronousSequence\(i).dll failed. CreateSequence method does not exist.", type: .error)
+    private func buildError(i: Int) -> BuildLog {
+        BuildLog(date: .now, text: "AsynchronousSequence\(i).dll failed. CreateSequence method does not exist.", type: .error)
     }
 }
 
@@ -66,13 +66,13 @@ enum AppError : String {
     case errorWhileBuildApp = "Arror occured while build app"
 }
 
-enum BuildInformationType: CaseIterable {
+enum BuildLogType: CaseIterable {
     case info, warning, error
 }
 
-struct BuildInformation: Identifiable {
+struct BuildLog: Identifiable {
     let id: UUID = UUID()
     let date: Date
     let text: String
-    let type: BuildInformationType
+    let type: BuildLogType
 }

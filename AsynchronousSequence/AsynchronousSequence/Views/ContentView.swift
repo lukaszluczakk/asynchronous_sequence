@@ -21,8 +21,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             buildAppButton
-            List(viewModel.informations) { info in
-                BuildInformationView(info)
+            List(viewModel.logs) { info in
+                BuildLogView(info)
             }
         }
         

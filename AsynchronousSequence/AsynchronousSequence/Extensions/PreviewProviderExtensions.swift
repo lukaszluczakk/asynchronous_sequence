@@ -17,7 +17,7 @@ extension PreviewProvider {
 struct PreviewProviderDev {
     static var instance = PreviewProviderDev()
     
-    var buildWithInfoStatus = BuildInformationViewModel(date: "2021-12-20", text: "Some of text", type: .info)
-    var buildWithWarningStatus = BuildInformationViewModel(date: "2021-12-20", text: "Some of text", type: .warning)
-    var buildWithErrorStatus = BuildInformationViewModel(date: "2021-12-20", text: "Some of text", type: .error)
+    var buildWithInfoStatus = BuildLogViewModel(date: "2021-12-20", text: "Some of text", type: .info)
+    var buildWithWarningStatus = BuildLogViewModel(date: "2021-12-20", text: "Some of text", type: .warning)
+    var buildWithErrorStatus = BuildLogViewModel(date: "2021-12-20", text: "Some of text", type: .error)
 }
