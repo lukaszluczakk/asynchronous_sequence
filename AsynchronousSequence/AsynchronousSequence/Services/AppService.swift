@@ -12,20 +12,24 @@ protocol AppServiceProtocol {
 }
 
 class AppService: AppServiceProtocol {
+    private var buildInformationFunctions: [((Int) -> BuildInformation)] = []
+    
+    init() {
+        buildInformationFunctions.append(buildInfo)
+        buildInformationFunctions.append(buildWarning)
+        buildInformationFunctions.append(buildError)
+    }
+
     func build() -> AsyncThrowingStream<BuildInformation, Error> {
         AsyncThrowingStream { continuation in
             Task {
                 for i in 1...5 {
                     let stopTime = Double.random(in: 0..<1)
                     Thread.sleep(forTimeInterval: stopTime)
+                    let model = buildInformationFunctions.randomElement()!(i)
+                    continuation.yield(model)
                     
-                    let type = BuildInformationType.allCases.randomElement()!
-                    let text = getText(type: type, i: i)
-                    let info = BuildInformation(date: Date(), text: text, type: type)
-                    
-                    continuation.yield(info)
-                    
-                    if type == .error {
+                    if model.type == .error {
                         continuation.finish(throwing: AppError.errorWhileBuildApp)
                     }
                 }
@@ -34,16 +38,17 @@ class AppService: AppServiceProtocol {
             }
         }
     }
+
+    private func buildInfo(i: Int) -> BuildInformation {
+        BuildInformation(date: .now, text: "AsynchronousSequence\(i).dll builded.", type: .info)
+    }
     
-    private func getText(type: BuildInformationType, i: Int) -> String {
-        switch (type) {
-        case .info:
-            return "AsynchronousSequence\(i).dll builded."
-        case .warning:
-            return "AsynchronousSequence\(i).dll has unused variables."
-        case .error:
-            return "AsynchronousSequence\(i).dll failed. CreateSequence method does not exist."
-        }
+    private func buildWarning(i: Int) -> BuildInformation {
+        BuildInformation(date: .now, text: "AsynchronousSequence\(i).dll has unused variables.", type: .warning)
+    }
+    
+    private func buildError(i: Int) -> BuildInformation {
+        BuildInformation(date: .now, text: "AsynchronousSequence\(i).dll failed. CreateSequence method does not exist.", type: .error)
     }
 }
 

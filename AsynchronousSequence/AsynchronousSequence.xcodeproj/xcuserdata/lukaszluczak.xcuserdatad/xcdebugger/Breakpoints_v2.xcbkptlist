@@ -192,7 +192,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "testExample()"
+            landmarkName = "test_buildAppButton_ShouldGenerateBuildViewInformation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

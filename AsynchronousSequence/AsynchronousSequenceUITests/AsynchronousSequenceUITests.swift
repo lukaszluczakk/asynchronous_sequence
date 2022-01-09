@@ -15,7 +15,7 @@ class AsynchronousSequenceUITests: XCTestCase {
         app.launch()
     }
 
-    func test_buildAppButton_ShouldGenerateBuildViewInformation() throws {
+    func test_BuildAppButton_ShouldGenerateBuildViewInformation() throws {
         app.buttons["BuildAppButton"].tap()
         let text = app.staticTexts.matching(identifier: "BuildInformationView_Text").firstMatch
         XCTAssertTrue(text.waitForExistence(timeout: 5))
