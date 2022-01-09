@@ -12,7 +12,8 @@ protocol AppServiceProtocol {
 }
 
 class AppService: AppServiceProtocol {
-    private var buildInformationFunctions: [((Int) -> BuildInformation)] = []
+    private typealias BuildInformationFunctionType = ((Int) -> BuildInformation)
+    private var buildInformationFunctions: [BuildInformationFunctionType] = []
     
     init() {
         buildInformationFunctions.append(buildInfo)
